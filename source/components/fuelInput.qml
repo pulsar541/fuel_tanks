@@ -11,8 +11,11 @@ Rectangle {
     TextInput {
         id : ti
         font.pointSize: 12
-        anchors.fill: parent
+        leftPadding: 5
+
+
         //inputMethodHints: Qt.ImhFormattedNumbersOnly
+        maximumLength: 4
 
         Component.onCompleted: {
             text = "0"
@@ -20,23 +23,25 @@ Rectangle {
         }
 
         onTextEdited: {
+            var vol = parseFloat(ti.text.trim())
+
             if(text.trim() === "") {
-                text = "0"
-            }
-
-            text.replace(",",".")
-
-            if(text.indexOf(".") === text.length-1) {
+                vol = 0
+                volumeChanged(vol)
                 return
             }
 
-            var vol = parseFloat(ti.text.trim())
+            if(text.trim().indexOf(".") === text.trim().length-1) {
+                return
+            }
+
             if(vol < 0) {
                 vol = 0
             }
             if(vol > maxVolume) {
                 vol = maxVolume
             }
+
             text = vol.toString()
             volumeChanged(vol)
         }

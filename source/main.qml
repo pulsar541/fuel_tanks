@@ -31,7 +31,6 @@ Window {
             update()
         }
 
-
         Rectangle {
             id: rectBeetweenFuelsPath
             color: "transparent"
@@ -146,24 +145,37 @@ Window {
             fontSizePx: parent.width * 0.075
             themeColor: rootItem.themeColor
         }
-
-
-
     }
 
     Item {
         id: itemInputsContainer
 
         width: parent.width/2
-        height: 30
+        height: childrenRect.height
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottomMargin: 30
 
+        Text {
+            text: qsTr("Объем первого бака(л)")
+            anchors.right: tiFirstFuelVolume.left
+            anchors.rightMargin: 10
+            anchors.verticalCenter: tiFirstFuelVolume.verticalCenter
+            color: "#ffffff"
+        }
+
+        Text {
+            text: qsTr("Объем второго бака(л)")
+            anchors.right: tiSecondFuelVolume.left
+            anchors.verticalCenter: tiSecondFuelVolume.verticalCenter
+            anchors.rightMargin: 10
+            color: "#ffffff"
+        }
+
         Components.FuelInput {
             id: tiFirstFuelVolume
-            width: parent.width/3
-            height: parent.height
+            width: 50
+            height: 20
             maxVolume: fuelTankFirst.maxVolume
             onVolumeChanged: {
                 fuelTankFirst.volume = volume
@@ -172,9 +184,10 @@ Window {
 
         Components.FuelInput {
             id: tiSecondFuelVolume
-            width: parent.width/3
-            height: parent.height
-            anchors.right: parent.right
+            width: 50
+            height: 20
+            anchors.top: tiFirstFuelVolume.bottom
+            anchors.topMargin: 10
             maxVolume: fuelTankFirst.maxVolume
             onVolumeChanged: {
                 fuelTankSecond.volume = volume

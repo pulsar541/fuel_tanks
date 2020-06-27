@@ -12,7 +12,6 @@ Item {
         anchors.centerIn: parent
         ShapePath {
             id: shapePath
-            //dashPattern: [ 1, 4 ]
             strokeColor: fillColor
             startX: rootItem.width; startY: 0
             PathLine { x: 0; y: 0 }
