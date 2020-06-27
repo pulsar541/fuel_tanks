@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>components/FuelInput.qml</file>
+        <file>components/FuelTank.qml</file>
+        <file>components/FuelValve.qml</file>
+        <file>components/FuelArrow.qml</file>
+    </qresource>
+</RCC>
