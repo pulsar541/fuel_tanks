@@ -23,10 +23,10 @@ qt.conf
 
 - из <путь к комплятору>\plugins\platforms
 в:  
-<exe>\plugins\platforms\qdirect2d.dll
-<exe>\plugins\platforms\qminimal.dll
-<exe>\plugins\platforms\qoffscreen.dll
-<exe>\plugins\platforms\qwindows.dll
+<папка с exe>\plugins\platforms\qdirect2d.dll
+<папка с exe>\plugins\platforms\qminimal.dll
+<папка с exe>\plugins\platforms\qoffscreen.dll
+<папка с exe>\plugins\platforms\qwindows.dll
 
 
 - в папку с exe скопировать  из <путь к комплятору>\qml
