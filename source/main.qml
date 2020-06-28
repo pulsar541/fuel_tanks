@@ -98,7 +98,7 @@ Window {
                 bottomMargin: 15
             }
 
-            color: fuelTankFirst.volume >= fuelTankSecond.volume
+            color: fuelTankFirst.volume <= fuelTankSecond.volume
                    ? themeColor
                    : "#ff0000"
 
@@ -115,7 +115,7 @@ Window {
                 bottom: fuelTankSecond.top
                 bottomMargin: 15
             }
-            color: fuelTankFirst.volume <= fuelTankSecond.volume
+            color: fuelTankFirst.volume >= fuelTankSecond.volume
                    ? themeColor
                    : "#ff0000"
 
