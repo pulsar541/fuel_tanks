@@ -27,6 +27,7 @@ Rectangle {
 
             if(text.trim() === "") {
                 vol = 0
+                text = "0"
                 volumeChanged(vol)
                 return
             }
